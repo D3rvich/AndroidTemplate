@@ -3,6 +3,7 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
+import ru.d3rvich.androidtemplate.androidTestImplementation
 import ru.d3rvich.androidtemplate.configureKotlinAndroid
 import ru.d3rvich.androidtemplate.implementation
 import ru.d3rvich.androidtemplate.libs
@@ -40,6 +41,9 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             dependencies {
                 implementation(libs.findLibrary("timber").get())
                 testImplementation(libs.findLibrary("junit").get())
+                androidTestImplementation(libs.findLibrary("junit").get())
+                androidTestImplementation(libs.findLibrary("androidx-espresso-core").get())
+                androidTestImplementation(libs.findLibrary("androidx-ui-test-junit4").get())
             }
         }
     }
