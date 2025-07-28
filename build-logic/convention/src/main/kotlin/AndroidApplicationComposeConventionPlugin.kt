@@ -7,7 +7,9 @@ import org.gradle.kotlin.dsl.getByType
 import ru.d3rvich.androidtemplate.androidTestImplementation
 import ru.d3rvich.androidtemplate.configureAndroidCompose
 import ru.d3rvich.androidtemplate.configureKotlinAndroid
+import ru.d3rvich.androidtemplate.implementation
 import ru.d3rvich.androidtemplate.libs
+import ru.d3rvich.androidtemplate.testImplementation
 
 class AndroidApplicationComposeConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -36,6 +38,8 @@ class AndroidApplicationComposeConventionPlugin : Plugin<Project> {
             val extension = extensions.getByType<ApplicationExtension>()
             configureAndroidCompose(extension)
             dependencies {
+                implementation(libs.findLibrary("timber").get())
+                testImplementation(libs.findLibrary("junit").get())
                 androidTestImplementation(libs.findLibrary("junit").get())
                 androidTestImplementation(libs.findLibrary("androidx-espresso-core").get())
                 androidTestImplementation(libs.findLibrary("androidx-ui-test-junit4").get())

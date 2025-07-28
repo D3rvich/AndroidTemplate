@@ -4,6 +4,7 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
 import ru.d3rvich.androidtemplate.configureKotlinAndroid
+import ru.d3rvich.androidtemplate.implementation
 import ru.d3rvich.androidtemplate.libs
 import ru.d3rvich.androidtemplate.testImplementation
 
@@ -37,6 +38,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             }
 
             dependencies {
+                implementation(libs.findLibrary("timber").get())
                 testImplementation(libs.findLibrary("junit").get())
             }
         }

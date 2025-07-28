@@ -44,8 +44,4 @@ internal fun Project.configureKotlin() {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
-    dependencies {
-        implementation(libs.findLibrary("timber").get())
-        testImplementation(libs.findLibrary("junit").get())
-    }
 }

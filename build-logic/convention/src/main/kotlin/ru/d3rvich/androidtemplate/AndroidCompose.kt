@@ -9,6 +9,7 @@ internal fun Project.configureAndroidCompose(commonExtension: CommonExtension<*,
         pluginManager.apply("org.jetbrains.kotlin.plugin.compose")
         buildFeatures {
             compose = true
+            buildConfig = true
         }
         dependencies {
             val bom = libs.findLibrary("androidx-compose-bom").get()

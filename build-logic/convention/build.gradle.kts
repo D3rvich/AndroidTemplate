@@ -53,5 +53,9 @@ gradlePlugin {
             id = "template.android.feature"
             implementationClass = "AndroidFeatureConventionPlugin"
         }
+        register("jvmLibrary") {
+            id = "template.jvm.library"
+            implementationClass = "JvmLibraryConventionPlugin"
+        }
     }
 }
