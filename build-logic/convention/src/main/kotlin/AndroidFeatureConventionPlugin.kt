@@ -10,8 +10,8 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
-                apply("jetgames.android.library")
-                apply("jetgames.android.hilt")
+                apply("template.android.library.compose")
+                apply("template.android.hilt")
             }
             extensions.configure<LibraryExtension> {
                 defaultConfig {
@@ -19,8 +19,8 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                 }
             }
             dependencies {
-//                implementation(project(":core:domain"))
-//                implementation(project(":core:ui"))
+                implementation(project(":core:domain"))
+                implementation(project(":core:ui"))
 
                 implementation(libs.findLibrary("androidx-hilt-navigation-compose").get())
                 implementation(libs.findLibrary("androidx-lifecycle-runtime-compose").get())
