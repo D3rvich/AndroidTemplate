@@ -12,7 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import dagger.hilt.android.AndroidEntryPoint
-import ru.d3rvich.androidtemplate.ui.theme.AndroidTemplateTheme
+import ru.d3rvich.ui.theme.AndroidTemplateTheme
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {

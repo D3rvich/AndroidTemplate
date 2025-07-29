@@ -1,4 +1,4 @@
-package ru.d3rvich.androidtemplate.ui.theme
+package ru.d3rvich.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

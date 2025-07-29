@@ -1,4 +1,4 @@
-package ru.d3rvich.androidtemplate.ui.theme
+package ru.d3rvich.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
