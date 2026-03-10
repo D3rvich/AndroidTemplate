@@ -1,10 +1,12 @@
+import com.android.build.api.dsl.ApplicationExtension
+
 plugins {
     alias(libs.plugins.template.android.application.compose)
     alias(libs.plugins.template.android.hilt)
     alias(libs.plugins.kotlin.serialization)
 }
 
-android {
+configure<ApplicationExtension> {
     namespace = "ru.d3rvich.androidtemplate"
 
     defaultConfig {

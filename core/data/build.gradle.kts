@@ -1,9 +1,11 @@
+import com.android.build.api.dsl.LibraryExtension
+
 plugins {
     alias(libs.plugins.template.android.library)
     alias(libs.plugins.template.android.hilt)
 }
 
-android {
+configure<LibraryExtension> {
     namespace = "ru.d3rvich.data"
 }
 

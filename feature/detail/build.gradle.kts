@@ -1,8 +1,10 @@
+import com.android.build.api.dsl.LibraryExtension
+
 plugins {
     alias(libs.plugins.template.android.feature)
 }
 
-android {
+configure<LibraryExtension> {
     namespace = "ru.d3rvich.detail"
 }
 
