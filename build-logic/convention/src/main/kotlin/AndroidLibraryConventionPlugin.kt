@@ -14,6 +14,9 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
 
             extensions.configure<LibraryExtension> {
                 configureKotlinAndroid(this)
+                compileSdk {
+                    version = release(36)
+                }
                 lint.targetSdk = 36
                 testOptions.apply {
                     targetSdk = 36
@@ -28,6 +31,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                     }
                 }
                 defaultConfig {
+                    minSdk = 24
                     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                     consumerProguardFiles("consumer-rules.pro")
                 }
