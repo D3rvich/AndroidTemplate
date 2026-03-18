@@ -22,6 +22,7 @@ dependencies {
     compileOnly(libs.android.tools.common)
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.ksp.gradlePlugin)
+    compileOnly(libs.room.gradlePlugin)
 }
 
 tasks {
@@ -52,6 +53,10 @@ gradlePlugin {
         register("androidFeature") {
             id = "template.android.feature"
             implementationClass = "AndroidFeatureConventionPlugin"
+        }
+        register("room") {
+            id = "template.android.room"
+            implementationClass = "AndroidRoomConventionPlugin"
         }
         register("jvmLibrary") {
             id = "template.jvm.library"
