@@ -13,4 +13,5 @@ dependencies {
     implementation(project(":core:domain"))
 
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.navigation3.runtime)
 }

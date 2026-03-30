@@ -17,15 +17,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import ru.d3rvich.detail.model.DetailUiAction
 import ru.d3rvich.detail.model.DetailUiEvent
 import ru.d3rvich.detail.model.DetailUiState
 
 @Composable
-fun DetailScreen(onBackClick: () -> Unit, modifier: Modifier = Modifier) {
-    val viewModel: DetailViewModel = hiltViewModel()
+fun DetailScreen(id: Int, onBackClick: () -> Unit, modifier: Modifier = Modifier) {
+    val viewModel: DetailViewModel =
+        hiltViewModel<DetailViewModel, DetailViewModel.Factory> { factory -> factory.create(id) }
     val state by viewModel.uiState.collectAsStateWithLifecycle()
     DetailScreen(
         state = state,

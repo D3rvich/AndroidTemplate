@@ -9,5 +9,4 @@ configure<LibraryExtension> {
 }
 
 dependencies {
-    implementation(libs.androidx.compose.navigation)
 }
