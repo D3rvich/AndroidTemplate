@@ -15,17 +15,26 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        google()
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
         mavenCentral()
     }
 }
 
-rootProject.name = "Android Template"
+rootProject.name = "androidtemplate"
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
 include(":core:domain")
 include(":core:data")
 include(":core:ui")
-include(":feature:list")
-include(":feature:detail")
 include(":core:network")
 include(":core:database")
+
+include(":feature:list")
+include(":feature:detail")

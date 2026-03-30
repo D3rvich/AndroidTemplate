@@ -16,16 +16,31 @@ configure<ApplicationExtension> {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix = ".debug"
+        }
+        release {
+            isMinifyEnabled = providers.gradleProperty("minifyWithR8")
+                .map(String::toBooleanStrict).getOrElse(true)
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+            signingConfig = signingConfigs.named("debug").get()
+        }
+    }
 }
 
 dependencies {
-    implementation(project(":core:domain"))
-    implementation(project(":core:data"))
-    implementation(project(":core:ui"))
-    implementation(project(":core:network"))
-    implementation(project(":core:database"))
-    implementation(project(":feature:list"))
-    implementation(project(":feature:detail"))
+    implementation(projects.core.domain)
+    implementation(projects.core.data)
+    implementation(projects.core.ui)
+    implementation(projects.core.network)
+    implementation(projects.core.database)
+    implementation(projects.feature.list)
+    implementation(projects.feature.detail)
 
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation3.runtime)

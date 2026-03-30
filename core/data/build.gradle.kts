@@ -10,7 +10,7 @@ configure<LibraryExtension> {
 }
 
 dependencies {
-    implementation(project(":core:domain"))
-    implementation(project(":core:database"))
-    implementation(project(":core:network"))
+    implementation(projects.core.domain)
+    implementation(projects.core.data)
+    implementation(projects.core.network)
 }

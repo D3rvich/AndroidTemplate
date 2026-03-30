@@ -16,7 +16,7 @@ configure<LibraryExtension> {
 }
 
 dependencies {
-    implementation(project(":core:domain"))
+    implementation(projects.core.domain)
     implementation(libs.kotlinx.serializationJson)
     implementation(libs.kotlinx.datetime)
     testImplementation(libs.junit)

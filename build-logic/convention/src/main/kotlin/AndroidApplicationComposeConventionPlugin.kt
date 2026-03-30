@@ -19,15 +19,6 @@ class AndroidApplicationComposeConventionPlugin : Plugin<Project> {
                     minSdk = 24
                 }
                 testOptions.animationsDisabled = true
-                buildTypes {
-                    release {
-                        isMinifyEnabled = false
-                        proguardFiles(
-                            getDefaultProguardFile("proguard-android-optimize.txt"),
-                            "proguard-rules.pro"
-                        )
-                    }
-                }
             }
 
             val extension = extensions.getByType<ApplicationExtension>()
