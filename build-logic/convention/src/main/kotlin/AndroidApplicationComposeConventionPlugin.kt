@@ -33,6 +33,7 @@ class AndroidApplicationComposeConventionPlugin : Plugin<Project> {
             val extension = extensions.getByType<ApplicationExtension>()
             configureAndroidCompose(extension)
             dependencies {
+                "debugImplementation"(libs.findLibrary("leakcanary").get())
                 "implementation"(libs.findLibrary("timber").get())
                 "testImplementation"(libs.findLibrary("junit").get())
                 "androidTestImplementation"(libs.findLibrary("junit").get())
